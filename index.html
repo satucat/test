@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ammonia</title>
+  <meta name="description" content="A Discord bot for digging through the weird parts of the internet. Add it to your account and use it anywhere.">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="window dialog" aria-labelledby="dialog-title">
+      <div class="titlebar">
+        <img src="icon.svg" alt="">
+        <h1 id="dialog-title">Ammonia</h1>
+        <button class="button close" id="close" type="button" aria-label="Close">×</button>
+      </div>
+      <div class="body">
+        <svg class="dialog-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="15" fill="#fff" stroke="#000" stroke-width="1"/>
+          <circle cx="16" cy="16" r="13" fill="#0a5fd8"/>
+          <rect x="14.5" y="13" width="3" height="11" fill="#fff"/>
+          <rect x="14.5" y="8" width="3" height="3" fill="#fff"/>
+        </svg>
+        <div class="dialog-text">
+          <strong>Ammonia wants to join your account.</strong>
+          <p>It's a Discord bot for digging through the weird parts of the internet: old GeoCities pages, websites through the years, live radio from anywhere, and videos nobody has ever watched.</p>
+          <p>Add it once and use its 120 commands in any server or DM.</p>
+        </div>
+      </div>
+      <div class="actions">
+        <!-- the Application ID from the Discord Developer Portal (General Information) -->
+        <a class="button default" href="https://discord.com/oauth2/authorize?client_id=1532025269395787897">Add to Discord</a>
+        <a class="button" href="#commands">See commands</a>
+      </div>
+    </section>
+
+    <section class="window popup" id="popup" role="alertdialog" aria-labelledby="popup-title" aria-describedby="popup-text" hidden>
+      <div class="titlebar">
+        <p id="popup-title">Ammonia</p>
+      </div>
+      <div class="body" style="display:flex;gap:14px">
+        <svg class="dialog-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="14" fill="#e00000" stroke="#800000"/>
+          <path d="M10 10l12 12M22 10L10 22" stroke="#fff" stroke-width="3.5"/>
+        </svg>
+        <p id="popup-text" class="dialog-text" style="margin:4px 0 0">You can't close the internet.</p>
+      </div>
+      <div class="actions">
+        <button class="button default" id="popup-ok" type="button">OK</button>
+      </div>
+    </section>
+
+    <section class="window explorer" id="commands" aria-labelledby="commands-title">
+      <div class="titlebar">
+        <img src="icon.svg" alt="">
+        <h2 id="commands-title">Commands</h2>
+      </div>
+      <div class="pane">
+        <table>
+          <thead>
+            <tr><th scope="col">Command</th><th scope="col">What it does</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>/fun timemachine</td><td>Shows a website across four different years, straight from the Wayback Machine.</td></tr>
+            <tr><td>/fun oldweb</td><td>Screenshots a random GeoCities page from the 90s and 00s.</td></tr>
+            <tr><td>/fun radio</td><td>Plays 15 seconds of a random live radio station from somewhere on earth.</td></tr>
+            <tr><td>/fun unseen</td><td>Finds a YouTube video that nobody has ever watched.</td></tr>
+            <tr><td>/safety linkcheck</td><td>Unshortens a link, checks the site, and screenshots where it really goes.</td></tr>
+            <tr><td>/utility diff</td><td>Compares a website today with an old copy and highlights what changed.</td></tr>
+            <tr><td>/media compress</td><td>Shrinks a video until it fits Discord's upload limit.</td></tr>
+            <tr><td>/fun error</td><td>Makes a fake Windows 98 error popup with your own message.</td></tr>
+            <tr><td>/fun bomb</td><td>Drops a bomb. The first person to cut the right wire saves everyone.</td></tr>
+            <tr><td>/net ssl</td><td>Shows a website's security certificate and when it expires.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="statusbar">
+        <p>10 of 120 commands shown</p>
+        <p><a href="https://tianjo.cc/satu/Ammonia#commands">See all of them</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="terms.html">Terms of Service</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="https://tianjo.cc/satu/Ammonia">Source code</a>
+    <p>Made by satu</p>
+  </footer>
+
+  <script>
+    // the one joke: closing the dialog doesn't close the internet
+    const popup = document.getElementById("popup");
+    const ok = document.getElementById("popup-ok");
+    const closeBtn = document.getElementById("close");
+    closeBtn.addEventListener("click", () => {
+      if (!popup.hidden) {
+        popup.classList.remove("shake");
+        void popup.offsetWidth;
+        popup.classList.add("shake");
+        return;
+      }
+      popup.hidden = false;
+      ok.focus();
+    });
+    ok.addEventListener("click", () => {
+      popup.hidden = true;
+      closeBtn.focus();
+    });
+    popup.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") ok.click();
+    });
+  </script>
+</body>
+</html>

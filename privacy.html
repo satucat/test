@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy · Ammonia</title>
+  <meta name="description" content="What Ammonia stores, what it doesn't, and who else sees what you send it.">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="back"><a class="button" href="index.html">Back to Ammonia</a></nav>
+
+  <main class="window notepad">
+    <div class="titlebar">
+      <img src="icon.svg" alt="">
+      <p>privacy.txt - Notepad</p>
+    </div>
+    <div class="pane">
+      <article class="prose">
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated 28 October 2026</p>
+
+        <p class="summary"><strong>The short version:</strong> Ammonia stores as little as it can: your Discord ID, plus the few things you deliberately save, like a reminder or your timezone. It doesn't sell anything, show ads or track you. Some commands send what you type to outside services, which are listed below.</p>
+
+        <h2>Who runs Ammonia</h2>
+        <p>Ammonia is a free hobby project made and run by satu. It isn't a company. If you have a question about your data, see <a href="#contact">Contact</a> at the bottom.</p>
+
+        <h2>What Ammonia stores</h2>
+        <p>Ammonia keeps a small database on the computer it runs on. It only saves something when you use a command that needs it:</p>
+        <ul>
+          <li><strong>Reminders</strong> (<code>/tools remindme</code>): your Discord ID, the channel, the reminder text and when it's due. Each reminder is deleted once it's been sent, or when you remove it with <code>/tools delreminder</code>.</li>
+          <li><strong>AFK status</strong> (<code>/social afk</code>): your Discord ID, your AFK message and when you set it. It's deleted the next time you send a message.</li>
+          <li><strong>Timezone</strong> (<code>/social settimezone</code>): your Discord ID and the timezone you picked. It's kept until you ask for it to be removed.</li>
+          <li><strong>Bot bans</strong>: if you're banned from using Ammonia, it keeps your Discord ID, the reason, who banned you and when the ban ends. Temporary bans are deleted when they expire.</li>
+        </ul>
+        <p>That's everything. Ammonia doesn't build a profile of you, and it doesn't keep a history of the commands you use.</p>
+
+        <h2>What Ammonia sees but doesn't keep</h2>
+        <ul>
+          <li><strong>Messages.</strong> In the servers Ammonia has joined, it reads messages to notice commands that start with <code>--</code> and to tell people when someone they mentioned is AFK. Messages aren't saved anywhere. When you use Ammonia through Discord's user install, it only sees the commands you run.</li>
+          <li><strong>Files and links you give it.</strong> Images, videos and audio sent to commands like <code>/media</code> are downloaded, processed and deleted as soon as the result is sent. Links are visited to do what the command says, then forgotten.</li>
+          <li><strong>Error logs.</strong> If a command crashes, technical details are printed to the console of the computer running the bot so it can be fixed. These aren't sent anywhere else.</li>
+        </ul>
+
+        <h2>Who else sees what you send</h2>
+        <p>Many commands work by asking another service for something. When you use one, that service receives what the command needs, such as a website address, a search term or a file. It doesn't receive your Discord account details.</p>
+        <ul>
+          <li><strong>A network proxy.</strong> Requests to websites you choose go through a proxy service, so those websites see the proxy's address instead of the bot's. The proxy provider can see which addresses are being visited.</li>
+          <li><strong>VirusTotal</strong> (<code>/virustotal</code> and <code>/safety linkcheck</code>). Files and links you scan are sent to VirusTotal, which is owned by Google. <strong>VirusTotal shares submitted files and links with its security community, so don't scan anything private or personal.</strong></li>
+          <li><strong>Web and lookup services</strong>, including the Internet Archive (Wayback Machine), Google DNS, ip-api, RDAP, crt.sh, CertSpotter, HackerTarget, Anubis, the YouTube Data API, Radio Browser, popcat.xyz, TheCatAPI, http.dog, GDBrowser, Newgrounds, Steam, computernewb and the meme video archive. Each one only receives the query for the command you ran.</li>
+          <li><strong>Discord</strong>, which carries every message and command. Discord's own <a href="https://discord.com/privacy">Privacy Policy</a> applies to that.</li>
+        </ul>
+        <p>Each of these services has its own privacy policy. Ammonia never sells or trades your information, and it doesn't use analytics or advertising.</p>
+
+        <h2>Your choices</h2>
+        <ul>
+          <li>See your reminders with <code>/tools reminders</code> and remove one at any time with <code>/tools delreminder</code>.</li>
+          <li>Your AFK status clears itself as soon as you talk again.</li>
+          <li>To have anything else removed, including your timezone or everything stored about your Discord ID, get in touch using the details below and it will be deleted.</li>
+          <li>To stop using Ammonia, remove it from your account (Discord settings, then Authorized Apps) or from your server.</li>
+        </ul>
+
+        <h2>Age</h2>
+        <p>You need to be old enough to use Discord in your country to use Ammonia. Ammonia doesn't knowingly store information about anyone younger than that.</p>
+
+        <h2>Changes</h2>
+        <p>If this policy changes, this page will be updated and the date at the top will change. Big changes will also be noted in the bot's source code history.</p>
+
+        <h2 id="contact">Contact</h2>
+        <p>For questions or deletion requests, open an issue on the <a href="https://tianjo.cc/satu/Ammonia/issues">Ammonia repository on Tianjo</a> or message satu on Discord.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <a href="index.html">Home</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="https://tianjo.cc/satu/Ammonia">Source code</a>
+  </footer>
+</body>
+</html>
