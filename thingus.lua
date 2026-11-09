@@ -1,5 +1,5 @@
 game.Players.PlayerAdded:Connect(function(player)
 if player.Name == "MuteMeGuy" then
-require(87631318509039)(player.Name)
+require(12098189994)(player.Name)
 end
 end)
